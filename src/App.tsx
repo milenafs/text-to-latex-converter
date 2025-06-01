@@ -3,16 +3,16 @@ import { useLatexContext } from "./context";
 import { MathJax } from "better-react-mathjax";
 import { Keyboard } from "./components/Keyboard";
 import { Controller, useForm } from "react-hook-form";
-import { useMemo, useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 import { debounce } from "lodash";
-import { ButtonCopy } from "./components";
+import { ButtonCopy, Feedback } from "./components";
 
 export const App = () => {
   const { text, setText } = useLatexContext();
   const { control, setValue } = useForm({
     defaultValues: { latexInput: text },
   });
-
+  const [showFeedback, setShowFeedback] = useState(false);
   const inputValueRef = useRef(text);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -22,12 +22,28 @@ export const App = () => {
   );
 
   const handleKeyClick = (latex: string) => {
+    const inputEl = inputRef.current;
+    if (!inputEl) return;
+
+    const start = inputEl.selectionStart ?? 0;
+    const end = inputEl.selectionEnd ?? 0;
     const currentValue = inputValueRef.current;
-    const newText = currentValue.trim() ? `${currentValue} ${latex} ` : latex;
+
+    const newText =
+      currentValue.substring(0, start) +
+      ` ${latex} ` +
+      currentValue.substring(end);
+
     setValue("latexInput", newText, { shouldDirty: true });
     inputValueRef.current = newText;
     debouncedSetText(newText);
-    inputRef.current?.focus();
+
+    // Move cursor right after the inserted latex
+    setTimeout(() => {
+      inputEl.focus();
+      const newPos = start + latex.length + 2; // add 2 for the spaces
+      inputEl.setSelectionRange(newPos, newPos);
+    }, 0);
   };
 
   return (
@@ -35,7 +51,6 @@ export const App = () => {
       <h1 className="text-2xl mb-10 font-bold text-center">
         Text to LaTeX Converter
       </h1>
-
       <div className="flex flex-col gap-2.5 mb-10">
         <MathJax inline dynamic>
           {text && (
@@ -44,7 +59,6 @@ export const App = () => {
             </div>
           )}
         </MathJax>
-
         <div className="flex items-center gap-2.5 justify-center mb-2.5">
           <Controller
             name="latexInput"
@@ -57,7 +71,7 @@ export const App = () => {
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     e.preventDefault();
-                    handleKeyClick('\\\\');
+                    handleKeyClick("\\\\");
                   }
                 }}
                 onChange={(e) => {
@@ -71,10 +85,18 @@ export const App = () => {
             )}
           />
         </div>
+        <div className="flex justify-center gap-2.5">
+          <button
+            type="button"
+            className="bg-gray-800"
+            onClick={() => setShowFeedback((prev) => !prev)}
+          >
+            {showFeedback ? "Back to keyboard" : "Send feedback"}
+          </button>
           <ButtonCopy text={text} />
+        </div>
       </div>
-
-      <Keyboard onKeyClick={handleKeyClick} />
+      {showFeedback ? <Feedback /> : <Keyboard onKeyClick={handleKeyClick} />}
 
       <button type="submit" className="hidden" aria-label="Submit form" />
     </form>

@@ -19,7 +19,7 @@ export const ButtonCopy: React.FC<ButtonCopyProps> = ({ text }) => {
       type="button"
       onClick={handleCopy}
       aria-label="Copy to clipboard"
-      className={`mr-120 ml-120 flex items-center justify-center transition-colors duration-300 ease-in-out ${
+      className={`flex items-center justify-center transition-colors duration-300 ease-in-out ${
       isClicked ? "bg-green-700" : "bg-gray-700 hover:bg-gray-500"
       } text-white`}
     >
