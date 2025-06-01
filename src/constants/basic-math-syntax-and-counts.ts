@@ -1,0 +1,92 @@
+export const BasicMathSyntaxAndCounts = {
+  SUPERSCRIPT: {
+    label: "a^{b}",
+    description: "Superscript",
+    latex: "^{}",
+    backgroundColor: "bg-sky-900",
+  },
+  SUBSCRIPT: {
+    label: "a_{b}",
+    description: "Subscript",
+    latex: "_{}",
+    backgroundColor: "bg-sky-900",
+  },
+  FRACTION: {
+    label: "\\frac{a}{b}",
+    description: "Fraction",
+    latex: "\\frac{}{}",
+    backgroundColor: "bg-sky-900",
+  },
+  SQUARE_ROOT: {
+    label: "\\sqrt{x}",
+    description: "Square root",
+    latex: "\\sqrt{}",
+    backgroundColor: "bg-sky-900",
+  },
+  NTH_ROOT: {
+    label: "\\sqrt[n]{x}",
+    description: "n-th root",
+    latex: "\\sqrt[n]{}",
+    backgroundColor: "bg-sky-900",
+  },
+  ABSOLUTE_VALUE: {
+    label: "\\left|{x}\\right|",
+    description: "Absolute value",
+    latex: "\\left|{}\\right|",
+    backgroundColor: "bg-sky-900",
+  },
+  AUTOMATIC_SIZED_PARENTHESES: {
+    label: "\\left({x}\\right)",
+    description: "Automatic sized parentheses",
+    latex: "\\left({}\\right)",
+    backgroundColor: "bg-sky-900",
+  },
+  MULTIPLICATION_DOT: {
+    label: "\\cdot",
+    description: "Multiplication dot",
+    latex: "\\cdot",
+    backgroundColor: "bg-sky-900",
+  },
+  MULTIPLICATION_CROSS: {
+    label: "\\times",
+    description: "Multiplication cross",
+    latex: "\\times",
+    backgroundColor: "bg-sky-900",
+  },
+  DIVISION: {
+    label: "\\div",
+    description: "Division",
+    latex: "\\div",
+    backgroundColor: "bg-sky-900",
+  },
+  PLUS_MINUS: {
+    label: "\\pm",
+    description: "Plus-minus",
+    latex: "\\pm",
+    backgroundColor: "bg-sky-900",
+  },
+  MINUS_PLUS: {
+    label: "\\mp",
+    description: "Minus-plus",
+    latex: "\\mp",
+    backgroundColor: "bg-sky-900",
+  },
+  ELLIPSIS: {
+    label: "\\ldots",
+    description: "Ellipsis",
+    latex: "\\ldots",
+    backgroundColor: "bg-sky-900",
+  },
+  SUMMATION_WITH_LIMITS: {
+    label: "\\sum_{i=1}^{n}",
+    description: "Summation with limits",
+    latex: "\\sum_{{i=1}}^{{n}}",
+    backgroundColor: "bg-sky-900",
+  },
+  PRODUCT_WITH_LIMITS: {
+    label: "\\prod_{i=1}^{n}",
+    description: "Product with limits",
+    latex: "\\prod_{{i=1}}^{{n}}",
+    backgroundColor: "bg-sky-900",
+  },
+};
