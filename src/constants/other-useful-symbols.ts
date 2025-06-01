@@ -59,4 +59,16 @@ export const OtherUsefulSymbols = {
     latex: "\\Leftrightarrow",
     backgroundColor: "bg-cyan-700",
   },
+  SUMMATION_WITH_LIMITS: {
+    label: "\\sum_{i=1}^{n}",
+    description: "Summation with limits",
+    latex: "\\sum_{{i=1}}^{{n}}",
+    backgroundColor: "bg-cyan-700",
+  },
+  PRODUCT_WITH_LIMITS: {
+    label: "\\prod_{i=1}^{n}",
+    description: "Product with limits",
+    latex: "\\prod_{{i=1}}^{{n}}",
+    backgroundColor: "bg-cyan-700",
+  },
 };

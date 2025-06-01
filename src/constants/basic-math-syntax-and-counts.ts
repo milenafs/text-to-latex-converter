@@ -41,6 +41,18 @@ export const BasicMathSyntaxAndCounts = {
     latex: "\\left({x}\\right)",
     backgroundColor: "bg-rose-900",
   },
+  BRACKETS: {
+    label: "\\left\\{{x}\\right\\}",
+    description: "Brackets",
+    latex: "\\left\\{{x}\\right\\}",
+    backgroundColor: "bg-rose-900",
+  },
+  GENERAL_LOGARITHM: {
+    label: "\\log_{b}(a)",
+    description: "General logarithm",
+    latex: "\\log_{b}(a)",
+    backgroundColor: "bg-rose-900",
+  },
   MULTIPLICATION_DOT: {
     label: "\\cdot",
     description: "Multiplication dot",
@@ -75,18 +87,6 @@ export const BasicMathSyntaxAndCounts = {
     label: "\\ldots",
     description: "Ellipsis",
     latex: "\\ldots",
-    backgroundColor: "bg-rose-900",
-  },
-  SUMMATION_WITH_LIMITS: {
-    label: "\\sum_{i=1}^{n}",
-    description: "Summation with limits",
-    latex: "\\sum_{{i=1}}^{{n}}",
-    backgroundColor: "bg-rose-900",
-  },
-  PRODUCT_WITH_LIMITS: {
-    label: "\\prod_{i=1}^{n}",
-    description: "Product with limits",
-    latex: "\\prod_{{i=1}}^{{n}}",
     backgroundColor: "bg-rose-900",
   },
 };

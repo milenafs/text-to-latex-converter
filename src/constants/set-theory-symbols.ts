@@ -95,12 +95,6 @@ export const SetTheorySymbols = {
     latex: "\\nsubseteq",
     backgroundColor: "bg-emerald-700",
   },
-  CARTESIAN_PRODUCT: {
-    label: "×",
-    description: "Cartesian product",
-    latex: "\\times",
-    backgroundColor: "bg-emerald-700",
-  },
   POWER_SET: {
     label: "P(A)",
     description: "Power set",
