@@ -36,7 +36,7 @@ export const App = () => {
         Text to LaTeX Converter
       </h1>
 
-      <div className="flex flex-col gap-2.5">
+      <div className="flex flex-col gap-2.5 mb-10">
         <MathJax inline dynamic>
           {text && (
             <div className="mb-10 overflow-auto max-h-96 max-w-full">
@@ -45,7 +45,7 @@ export const App = () => {
           )}
         </MathJax>
 
-        <div className="flex items-center gap-2.5 justify-center mb-10">
+        <div className="flex items-center gap-2.5 justify-center mb-2.5">
           <Controller
             name="latexInput"
             control={control}
@@ -70,8 +70,8 @@ export const App = () => {
               />
             )}
           />
-          <ButtonCopy text={text} />
         </div>
+          <ButtonCopy text={text} />
       </div>
 
       <Keyboard onKeyClick={handleKeyClick} />

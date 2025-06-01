@@ -1,24 +1,6 @@
 import { useCallback } from "react";
-import { SymbolKey } from "./"; // Assuming SymbolKey is another component
-import {
-  BasicMathSyntaxAndCounts,
-  DerivativesAndIntegrals,
-  FunctionsAndRelations,
-  GreekSymbols,
-  LogicSymbols,
-  OtherUsefulSymbols,
-  SetTheorySymbols,
-} from "../constants";
-
-const SymbolGroups = [
-  BasicMathSyntaxAndCounts,
-  SetTheorySymbols,
-  FunctionsAndRelations,
-  LogicSymbols,
-  OtherUsefulSymbols,
-  DerivativesAndIntegrals,
-  GreekSymbols,
-];
+import { SymbolKey } from "./";
+import { SymbolGroups } from "../constants";
 
 interface KeyboardProps {
   onKeyClick: (keyValue: string) => void;
@@ -34,11 +16,10 @@ export const Keyboard = ({ onKeyClick }: KeyboardProps) => {
 
   return (
     <div className="keyboard">
-      {/* Keyboard Section */}
       {SymbolGroups.map((symbolGroup, index) => (
         <div
           key={index}
-          className="mb-2.5 flex flex-wrap gap-2.5 justify-center"
+          className="mb-2.5 flex flex-wrap gap-2.5 justify-center "
         >
           {Object.values(symbolGroup).map((symbol) => (
             <SymbolKey

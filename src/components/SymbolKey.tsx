@@ -19,7 +19,8 @@ export const SymbolKey = ({ symbol, onClick }: SymbolKeyProps) => {
       onClick={handleClick}
       title={symbol.description}
       aria-label={symbol.description}
-      className={`border border-gray-300 rounded-md p-2 cursor-pointer ${defaultBackgroundColor} text-lg hover:box-shadow-md transition-all duration-200`}
+      className={`border border-gray-300 rounded-md p-2 cursor-pointer ${defaultBackgroundColor} text-lg shadow-md hover:shadow-lg active:shadow-none active:translate-y-1 transition-all duration-200`}
+      style={{ boxShadow: "0px 4px 1px rgba(0, 0, 0, 0.493)" }}
     >
       <MathJax inline>{`\\(${symbol.label}\\)`}</MathJax>
     </button>
