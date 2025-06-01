@@ -68,7 +68,7 @@ export const FunctionsAndRelations = {
   SPACE: {
     label: " SPACE ",
     description: "space",
-    latex: "\\",
+    latex: " \\ ",
     backgroundColor: "bg-sky-700",
   },
 };
