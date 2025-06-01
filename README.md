@@ -1,4 +1,4 @@
-# ✨ React LaTeX Formula Converter ✨
+# React LaTeX Formula Converter 🧮✨
 
 <p align="center">
   <img src="./public/Vector.svg" alt="React LaTeX Formula Converter" width="250" />
