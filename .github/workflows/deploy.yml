@@ -42,7 +42,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          path: './dist'
+          path: '.'
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Deploy to GitHub Pages
