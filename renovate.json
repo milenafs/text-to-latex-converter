@@ -1,0 +1,10 @@
+{
+  "extends": ["config:recommended"],
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true
+    }
+  ],
+  "schedule": ["after 10pm and before 5am on every weekday"]
+}
