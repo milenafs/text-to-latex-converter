@@ -39,6 +39,13 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-output
+        uses: actions/deploy-pages@v1
+        with:
+          artifact-name: build-output
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Deploy to GitHub Pages
