@@ -270,4 +270,73 @@
     background-color: var(--btn-success-bg);
     color: var(--btn-success-fg);
   }
+
+  /* Circular trigger pinned to the top-right corner of the viewport. */
+  .icon-btn {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem;
+    border-radius: 9999px;
+    background-color: var(--btn-bg);
+    color: var(--btn-fg);
+    box-shadow: 0 2px 6px var(--key-shadow);
+    transition: background-color 300ms ease-in-out;
+  }
+  .icon-btn:hover {
+    background-color: var(--btn-bg-hover);
+  }
+
+  /* Preflight's `*` reset clears the UA margin that centres a modal dialog,
+     so it has to be restored. Layout only applies while [open], otherwise it
+     would override the UA's `dialog:not([open]) { display: none }`. */
+  .modal {
+    margin: auto;
+    width: 100%;
+    max-width: min(680px, calc(100vw - 2rem));
+    max-height: calc(100vh - 4rem);
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--divider);
+    border-radius: 12px;
+    background-color: var(--surface);
+    color: var(--fg);
+  }
+  .modal[open] {
+    display: flex;
+    flex-direction: column;
+  }
+  .modal::backdrop {
+    background-color: rgb(0 0 0 / 0.5);
+  }
+
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .modal-close {
+    display: inline-flex;
+    padding: 0.35rem;
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--fg-muted);
+  }
+  .modal-close:hover {
+    background-color: var(--divider);
+    color: var(--fg);
+  }
+
+  .modal-body {
+    min-height: 0;
+    overflow: auto;
+  }
 }
