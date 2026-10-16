@@ -1,140 +1,119 @@
+import type { Symbol } from "../types";
+
 export const GreekSymbols = {
   ALPHA: {
     label: "α",
     description: "Alpha",
     latex: "\\alpha",
-    backgroundColor: "bg-purple-900",
   },
   BETA: {
     label: "β",
     description: "Beta",
     latex: "\\beta",
-    backgroundColor: "bg-purple-900",
   },
   GAMMA_LOWERCASE: {
     label: "γ",
     description: "Gamma (lowercase)",
     latex: "\\gamma",
-    backgroundColor: "bg-purple-900",
   },
   GAMMA_UPPERCASE: {
     label: "Γ",
     description: "Gamma (uppercase)",
     latex: "\\Gamma",
-    backgroundColor: "bg-purple-900",
   },
   DELTA_LOWERCASE: {
     label: "δ",
     description: "Delta (lowercase)",
     latex: "\\delta",
-    backgroundColor: "bg-purple-900",
   },
   DELTA_UPPERCASE: {
     label: "Δ",
     description: "Delta (uppercase)",
     latex: "\\Delta",
-    backgroundColor: "bg-purple-900",
   },
   EPSILON: {
     label: "ε",
     description: "Epsilon",
     latex: "\\epsilon",
-    backgroundColor: "bg-purple-900",
   },
   THETA_LOWERCASE: {
     label: "θ",
     description: "Theta",
     latex: "\\theta",
-    backgroundColor: "bg-purple-900",
   },
   THETA_UPPERCASE: {
     label: "Θ",
     description: "Theta (uppercase)",
     latex: "\\Theta",
-    backgroundColor: "bg-purple-900",
   },
   LAMBDA_LOWERCASE: {
     label: "λ",
     description: "Lambda",
     latex: "\\lambda",
-    backgroundColor: "bg-purple-900",
   },
   LAMBDA_UPPERCASE: {
     label: "Λ",
     description: "Lambda (uppercase)",
     latex: "\\Lambda",
-    backgroundColor: "bg-purple-900",
   },
   MU: {
     label: "μ",
     description: "Mu",
     latex: "\\mu",
-    backgroundColor: "bg-purple-900",
   },
   PI_LOWERCASE: {
     label: "π",
     description: "Pi",
     latex: "\\pi",
-    backgroundColor: "bg-purple-900",
   },
   PI_UPPERCASE: {
     label: "Π",
     description: "Pi (uppercase)",
     latex: "\\Pi",
-    backgroundColor: "bg-purple-900",
   },
   RHO: {
     label: "ρ",
     description: "Rho",
     latex: "\\rho",
-    backgroundColor: "bg-purple-900",
   },
   SIGMA_LOWERCASE: {
     label: "σ",
     description: "Sigma",
     latex: "\\sigma",
-    backgroundColor: "bg-purple-900",
   },
   SIGMA_UPPERCASE: {
     label: "Σ",
     description: "Sigma (uppercase)",
     latex: "\\Sigma",
-    backgroundColor: "bg-purple-900",
   },
   TAU: {
     label: "τ",
     description: "Tau",
     latex: "\\tau",
-    backgroundColor: "bg-purple-900",
   },
   PHI_LOWERCASE: {
     label: "φ",
     description: "Phi",
     latex: "\\phi",
-    backgroundColor: "bg-purple-900",
   },
   PHI_UPPERCASE: {
     label: "Φ",
     description: "Phi (uppercase)",
     latex: "\\Phi",
-    backgroundColor: "bg-purple-900",
   },
   OMEGA_LOWERCASE: {
     label: "ω",
     description: "Omega (lowercase)",
     latex: "\\omega",
-    backgroundColor: "bg-purple-900",
   },
   OMEGA_UPPERCASE: {
     label: "Ω",
     description: "Omega (uppercase)",
     latex: "\\Omega",
-    backgroundColor: "bg-purple-900",
   },
   INFINITY: {
     label: "∞",
     description: "Infinity",
     latex: "\\infty",
-    backgroundColor: "bg-purple-900",
   },
-};
+} satisfies Record<string, Symbol>;

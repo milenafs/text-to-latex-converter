@@ -1,17 +1,23 @@
 import { MathJax } from "better-react-mathjax";
-import type { Symbol } from "../types";
-import { useCallback } from "react";
+import type { Symbol, SymbolCategory } from "../types";
+import { memo, useCallback } from "react";
 
 interface SymbolKeyProps {
   symbol: Symbol;
-  onClick: VoidFunction;
+  /** Category of the group the key sits in; the symbol may override it. */
+  category: SymbolCategory;
+  onKeyClick: (latex: string) => void;
 }
-export const SymbolKey = ({ symbol, onClick }: SymbolKeyProps) => {
-  const defaultBackgroundColor = symbol.backgroundColor || "bg-gray-100";
 
-  const handleClick = useCallback(() => {
-    onClick();
-  }, [onClick]);
+const SymbolKeyComponent = ({
+  symbol,
+  category,
+  onKeyClick,
+}: SymbolKeyProps) => {
+  const handleClick = useCallback(
+    () => onKeyClick(symbol.latex),
+    [onKeyClick, symbol.latex]
+  );
 
   return (
     <button
@@ -19,10 +25,14 @@ export const SymbolKey = ({ symbol, onClick }: SymbolKeyProps) => {
       onClick={handleClick}
       title={symbol.description}
       aria-label={symbol.description}
-      className={`border border-gray-300 rounded-md p-2 cursor-pointer ${defaultBackgroundColor} text-lg shadow-md hover:shadow-lg active:shadow-none active:translate-y-1 transition-all duration-200`}
-      style={{ boxShadow: "0px 4px 1px rgba(0, 0, 0, 0.493)" }}
+      className={`key key-${symbol.category ?? category}`}
     >
       <MathJax inline>{`\\(${symbol.label}\\)`}</MathJax>
     </button>
   );
 };
+
+// Every key typesets its label through MathJax, and the whole keyboard is on
+// screen while the user types. Without memo, each keystroke re-renders all of
+// them; the props here are stable, so none of that work needs to repeat.
+export const SymbolKey = memo(SymbolKeyComponent);

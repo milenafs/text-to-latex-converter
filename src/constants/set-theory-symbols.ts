@@ -1,104 +1,89 @@
+import type { Symbol } from "../types";
+
 export const SetTheorySymbols = {
   ELEMENT_OF: {
     label: "∈",
     description: "Element of",
     latex: "\\in",
-    backgroundColor: "bg-emerald-700",
   },
   NOT_ELEMENT_OF: {
     label: "∉",
     description: "Not element of",
     latex: "\\notin",
-    backgroundColor: "bg-emerald-700",
   },
   SUBSET: {
     label: "⊆",
     description: "Subset",
     latex: "\\subseteq",
-    backgroundColor: "bg-emerald-700",
   },
   PROPER_SUBSET: {
     label: "⊂",
     description: "Proper subset",
     latex: "\\subset",
-    backgroundColor: "bg-emerald-700",
   },
   SUPERSET: {
     label: "⊇",
     description: "Superset",
     latex: "\\supseteq",
-    backgroundColor: "bg-emerald-700",
   },
   PROPER_SUPERSET: {
     label: "⊃",
     description: "Proper superset",
     latex: "\\supset",
-    backgroundColor: "bg-emerald-700",
   },
   EMPTY_SET: {
     label: "∅",
     description: "Empty set",
     latex: "\\emptyset",
-    backgroundColor: "bg-emerald-700",
   },
   NATURAL_NUMBERS: {
     label: "ℕ",
     description: "Natural numbers",
     latex: "\\mathbb{N}",
-    backgroundColor: "bg-emerald-700",
   },
   INTEGERS: {
     label: "ℤ",
     description: "Integers",
     latex: "\\mathbb{Z}",
-    backgroundColor: "bg-emerald-700",
   },
   RATIONALS: {
     label: "ℚ",
     description: "Rationals",
     latex: "\\mathbb{Q}",
-    backgroundColor: "bg-emerald-700",
   },
   REALS: {
     label: "ℝ",
     description: "Reals",
     latex: "\\mathbb{R}",
-    backgroundColor: "bg-emerald-700",
   },
   COMPLEX_NUMBERS: {
     label: "ℂ",
     description: "Complex numbers",
     latex: "\\mathbb{C}",
-    backgroundColor: "bg-emerald-700",
   },
   UNION: {
     label: "∪",
     description: "Union",
     latex: "\\cup",
-    backgroundColor: "bg-emerald-700",
   },
   INTERSECTION: {
     label: "∩",
     description: "Intersection",
     latex: "\\cap",
-    backgroundColor: "bg-emerald-700",
   },
   SET_DIFFERENCE: {
     label: "\\setminus",
     description: "Set difference",
     latex: "\\setminus",
-    backgroundColor: "bg-emerald-700",
   },
   NOT_SUBSET: {
     label: "⊈",
     description: "Not subset",
     latex: "\\nsubseteq",
-    backgroundColor: "bg-emerald-700",
   },
   POWER_SET: {
     label: "P(A)",
     description: "Power set",
     latex: "\\mathcal{P}(A)",
-    backgroundColor: "bg-emerald-700",
   },
-};
+} satisfies Record<string, Symbol>;

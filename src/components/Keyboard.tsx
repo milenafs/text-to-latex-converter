@@ -1,31 +1,27 @@
-import { useCallback } from "react";
-import { SymbolKey } from "./";
+import { memo } from "react";
+import { SymbolKey } from "./SymbolKey";
 import { SymbolGroups } from "../constants";
 
 interface KeyboardProps {
   onKeyClick: (keyValue: string) => void;
 }
 
-export const Keyboard = ({ onKeyClick }: KeyboardProps) => {
-  const handleKeyClick = useCallback(
-    (latex: string) => {
-      onKeyClick(latex);
-    },
-    [onKeyClick]
-  );
-
+const KeyboardComponent = ({ onKeyClick }: KeyboardProps) => {
   return (
-    <div className="keyboard">
-      {SymbolGroups.map((symbolGroup, index) => (
+    <div className="keyboard" role="group" aria-label="Symbol keyboard">
+      {SymbolGroups.map((group) => (
         <div
-          key={index}
-          className="mb-2.5 flex flex-wrap gap-2.5 justify-center "
+          key={group.category}
+          role="group"
+          aria-label={group.label}
+          className="mb-2.5 flex flex-wrap gap-2.5 justify-center"
         >
-          {Object.values(symbolGroup).map((symbol) => (
+          {Object.values(group.symbols).map((symbol) => (
             <SymbolKey
               key={symbol.description}
               symbol={symbol}
-              onClick={() => handleKeyClick(symbol.latex)}
+              category={group.category}
+              onKeyClick={onKeyClick}
             />
           ))}
         </div>
@@ -33,3 +29,5 @@ export const Keyboard = ({ onKeyClick }: KeyboardProps) => {
     </div>
   );
 };
+
+export const Keyboard = memo(KeyboardComponent);

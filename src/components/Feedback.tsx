@@ -1,27 +1,12 @@
 export const Feedback = () => {
   return (
-    <div
-      style={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <div className="flex w-full justify-center">
       <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLScJjCArblOo4774BHMxQx6u8IR_gId93woRNou-VlLFjNBTcA/viewform?embedded=true"
-        width="640"
-        height="520"
-        frameBorder="0"
-        marginHeight={0}
-        marginWidth={0}
         title="Feedback Form"
-        style={{ border: "none" }}
-      >
-        Carregando…
-      </iframe>
+        loading="lazy"
+        className="h-[520px] w-full max-w-[640px] border-none"
+      />
     </div>
   );
 };
-
-export default Feedback;

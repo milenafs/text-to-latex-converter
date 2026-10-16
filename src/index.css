@@ -1,62 +1,273 @@
 @import "tailwindcss";
 
+/* Expose the semantic tokens as utilities (bg-surface, text-fg, border-divider...).
+   `inline` is required: it makes the utilities reference the underlying custom
+   property directly, so they follow the scheme overrides below. */
+@theme inline {
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-divider: var(--divider);
+}
+
+/* ---------------------------------------------------------------------------
+   Semantic colour tokens — light scheme
+   Every colour in the app resolves through a token defined here and redefined
+   in the dark block below. Backgrounds and foregrounds are declared as pairs
+   so a surface can never drift out of contrast with its own text.
+--------------------------------------------------------------------------- */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --surface: #ffffff;
+  --fg: #213547;
+  --fg-muted: #5b6b7c;
+  --divider: #cbd5e1;
+
+  --link: #646cff;
+  --link-hover: #747bff;
+
+  --btn-bg: #334155;
+  --btn-bg-hover: #475569;
+  --btn-fg: #f8fafc;
+  --btn-success-bg: #15803d;
+  --btn-success-fg: #f0fdf4;
+
+  --key-shadow: rgba(15, 23, 42, 0.25);
+
+  /* basic math syntax and counts */
+  --key-basic-bg: #ffe4e6;
+  --key-basic-fg: #881337;
+  --key-basic-border: #fda4af;
+
+  /* functions and relations */
+  --key-functions-bg: #fef3c7;
+  --key-functions-fg: #78350f;
+  --key-functions-border: #fcd34d;
+
+  /* logic symbols */
+  --key-logic-bg: #fef9c3;
+  --key-logic-fg: #713f12;
+  --key-logic-border: #fde047;
+
+  /* set theory symbols */
+  --key-sets-bg: #d1fae5;
+  --key-sets-fg: #064e3b;
+  --key-sets-border: #6ee7b7;
+
+  /* other useful symbols */
+  --key-misc-bg: #cffafe;
+  --key-misc-fg: #164e63;
+  --key-misc-border: #67e8f9;
+
+  /* derivatives and integrals */
+  --key-calculus-bg: #dbeafe;
+  --key-calculus-fg: #1e3a8a;
+  --key-calculus-border: #93c5fd;
+
+  /* greek symbols */
+  --key-greek-bg: #f3e8ff;
+  --key-greek-fg: #581c87;
+  --key-greek-border: #d8b4fe;
+
+  /* control keys (space, enter) */
+  --key-control-bg: #e2e8f0;
+  --key-control-fg: #0f172a;
+  --key-control-border: #94a3b8;
+
+  color: var(--fg);
+  background-color: var(--surface);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:active {
-  transform: scale(0.98);
-}
-
-@media (prefers-color-scheme: light) {
+/* ---------------------------------------------------------------------------
+   Dark scheme. Keycap backgrounds keep the hues the light scheme inverts, and
+   each one carries the foreground that stays legible on it — note that
+   --key-logic-fg stays dark ink, because its yellow is too light for white.
+--------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --surface: #242424;
+    --fg: rgba(255, 255, 255, 0.87);
+    --fg-muted: #9aa4b0;
+    --divider: #3f3f46;
+
+    --link: #646cff;
+    --link-hover: #535bf2;
+
+    --btn-bg: #4b5563;
+    --btn-bg-hover: #6b7280;
+    --btn-fg: #f9fafb;
+    --btn-success-bg: #166534;
+    --btn-success-fg: #f0fdf4;
+
+    --key-shadow: rgba(0, 0, 0, 0.6);
+
+    --key-basic-bg: #881337;
+    --key-basic-fg: #ffe4e6;
+    --key-basic-border: #9f1239;
+
+    --key-functions-bg: #92400e;
+    --key-functions-fg: #fef3c7;
+    --key-functions-border: #b45309;
+
+    --key-logic-bg: #ca8a04;
+    --key-logic-fg: #422006;
+    --key-logic-border: #a16207;
+
+    --key-sets-bg: #047857;
+    --key-sets-fg: #ecfdf5;
+    --key-sets-border: #065f46;
+
+    --key-misc-bg: #0e7490;
+    --key-misc-fg: #ecfeff;
+    --key-misc-border: #155e75;
+
+    --key-calculus-bg: #1e3a8a;
+    --key-calculus-fg: #dbeafe;
+    --key-calculus-border: #1e40af;
+
+    --key-greek-bg: #581c87;
+    --key-greek-fg: #f3e8ff;
+    --key-greek-border: #6b21a8;
+
+    --key-control-bg: #475569;
+    --key-control-fg: #f1f5f9;
+    --key-control-border: #64748b;
+  }
+}
+
+/* Element defaults belong in the base layer so that utilities and component
+   classes can still override them. Unlayered, this block was silently winning
+   over the keys' padding, radius, border and active transform. */
+@layer base {
+  :root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    font-weight: 500;
+    color: var(--link);
+    text-decoration: inherit;
   }
   a:hover {
-    color: #747bff;
+    color: var(--link-hover);
+  }
+
+  body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+
+  button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  button:active {
+    transform: scale(0.98);
+  }
+}
+
+@layer components {
+  /* A keycap. The category modifier supplies the three --key-* values. */
+  .key {
+    background-color: var(--key-bg);
+    color: var(--key-fg);
+    border: 1px solid var(--key-border);
+    border-radius: 8px;
+    padding: 0.6em 1.2em;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    box-shadow: 0 4px 1px var(--key-shadow);
+    transition: box-shadow 200ms ease, transform 200ms ease,
+      background-color 200ms ease;
+  }
+  .key:hover {
+    box-shadow: 0 5px 2px var(--key-shadow);
+  }
+  .key:active {
+    box-shadow: none;
+    transform: translateY(4px);
+  }
+
+  .key-basic {
+    --key-bg: var(--key-basic-bg);
+    --key-fg: var(--key-basic-fg);
+    --key-border: var(--key-basic-border);
+  }
+  .key-functions {
+    --key-bg: var(--key-functions-bg);
+    --key-fg: var(--key-functions-fg);
+    --key-border: var(--key-functions-border);
+  }
+  .key-logic {
+    --key-bg: var(--key-logic-bg);
+    --key-fg: var(--key-logic-fg);
+    --key-border: var(--key-logic-border);
+  }
+  .key-sets {
+    --key-bg: var(--key-sets-bg);
+    --key-fg: var(--key-sets-fg);
+    --key-border: var(--key-sets-border);
+  }
+  .key-misc {
+    --key-bg: var(--key-misc-bg);
+    --key-fg: var(--key-misc-fg);
+    --key-border: var(--key-misc-border);
+  }
+  .key-calculus {
+    --key-bg: var(--key-calculus-bg);
+    --key-fg: var(--key-calculus-fg);
+    --key-border: var(--key-calculus-border);
+  }
+  .key-greek {
+    --key-bg: var(--key-greek-bg);
+    --key-fg: var(--key-greek-fg);
+    --key-border: var(--key-greek-border);
+  }
+  .key-control {
+    --key-bg: var(--key-control-bg);
+    --key-fg: var(--key-control-fg);
+    --key-border: var(--key-control-border);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--btn-bg);
+    color: var(--btn-fg);
+    transition: background-color 300ms ease-in-out;
+  }
+  .btn:hover {
+    background-color: var(--btn-bg-hover);
+  }
+  .btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  .btn:disabled:hover {
+    background-color: var(--btn-bg);
+  }
+
+  .btn-success,
+  .btn-success:hover {
+    background-color: var(--btn-success-bg);
+    color: var(--btn-success-fg);
   }
 }
