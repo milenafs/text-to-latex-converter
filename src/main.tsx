@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { MathJaxContext } from "better-react-mathjax";
 import { App } from "./App.tsx";
-import { LatexProvider } from "./context/LatextContext.tsx";
+import { LatexProvider } from "./context";
 
 const MathJaxConfig = {
   loader: { load: ["[tex]/html"] },

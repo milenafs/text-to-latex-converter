@@ -1,92 +1,79 @@
+import type { Symbol } from "../types";
+
 export const BasicMathSyntaxAndCounts = {
   SUPERSCRIPT: {
     label: "a^{b}",
     description: "Superscript",
     latex: "a^{b}",
-    backgroundColor: "bg-rose-900",
   },
   SUBSCRIPT: {
     label: "a_{b}",
     description: "Subscript",
     latex: "a_{b}",
-    backgroundColor: "bg-rose-900",
   },
   FRACTION: {
     label: "\\frac{a}{b}",
     description: "Fraction",
     latex: "\\frac{a}{b}",
-    backgroundColor: "bg-rose-900",
   },
   SQUARE_ROOT: {
     label: "\\sqrt{x}",
     description: "Square root",
     latex: "\\sqrt{x}",
-    backgroundColor: "bg-rose-900",
   },
   NTH_ROOT: {
     label: "\\sqrt[n]{x}",
     description: "n-th root",
     latex: "\\sqrt[n]{x}",
-    backgroundColor: "bg-rose-900",
   },
   ABSOLUTE_VALUE: {
     label: "\\left|{x}\\right|",
     description: "Absolute value",
     latex: "\\left|{x}\\right|",
-    backgroundColor: "bg-rose-900",
   },
   AUTOMATIC_SIZED_PARENTHESES: {
     label: "\\left({x}\\right)",
     description: "Automatic sized parentheses",
     latex: "\\left({x}\\right)",
-    backgroundColor: "bg-rose-900",
   },
   BRACKETS: {
     label: "\\left\\{{x}\\right\\}",
     description: "Brackets",
     latex: "\\left\\{{x}\\right\\}",
-    backgroundColor: "bg-rose-900",
   },
   GENERAL_LOGARITHM: {
     label: "\\log_{b}(a)",
     description: "General logarithm",
     latex: "\\log_{b}(a)",
-    backgroundColor: "bg-rose-900",
   },
   MULTIPLICATION_DOT: {
     label: "\\cdot",
     description: "Multiplication dot",
     latex: "\\cdot",
-    backgroundColor: "bg-rose-900",
   },
   MULTIPLICATION_CROSS: {
     label: "\\times",
     description: "Multiplication cross",
     latex: "\\times",
-    backgroundColor: "bg-rose-900",
   },
   DIVISION: {
     label: "\\div",
     description: "Division",
     latex: "\\div",
-    backgroundColor: "bg-rose-900",
   },
   PLUS_MINUS: {
     label: "\\pm",
     description: "Plus-minus",
     latex: "\\pm",
-    backgroundColor: "bg-rose-900",
   },
   MINUS_PLUS: {
     label: "\\mp",
     description: "Minus-plus",
     latex: "\\mp",
-    backgroundColor: "bg-rose-900",
   },
   ELLIPSIS: {
     label: "\\ldots",
     description: "Ellipsis",
     latex: "\\ldots",
-    backgroundColor: "bg-rose-900",
   },
-};
+} satisfies Record<string, Symbol>;
