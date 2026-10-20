@@ -6,6 +6,9 @@
 
 Welcome to the **React LaTeX Formula Converter** — a fast, user-friendly tool designed to help students, educators, and developers effortlessly convert plain text math expressions into beautifully rendered LaTeX formulas. Built with React, TypeScript, and Vite, this project leverages **better-react-mathjax** for real-time rendering and offers a responsive keyboard for quick formula input. 🧮⚛️
 
+<img width="1512" height="811" alt="image" src="https://github.com/user-attachments/assets/6cbf6b52-9864-4869-9b26-8bd718a03f3b" />
+
+
 ## 🎯 Why This Project?
 
 Math and science students, especially at institutions like **UNICAMP** 🎓, often face challenges typing complex mathematical formulas online. This converter bridges the gap between intuitive text input and precise LaTeX rendering, making it ideal for courses such as **Fundamentos Matemáticos (MC358)** 📐 and **Cálculo Avançado (MC458)** ➗.
